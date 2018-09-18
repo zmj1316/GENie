@@ -658,6 +658,14 @@
 		end
 	end
 
+	local function manifests(cfg)
+		if cfg.flags.DpiAwareness then
+		    _p(2,'<Manifest>')
+				_p(3,'<EnableDpiAwareness>true</EnableDpiAwareness>')
+			_p(2,'</Manifest>')
+		end
+	end
+
 	local function additional_options(indent,cfg)
 		if #cfg.linkoptions > 0 then
 				_p(indent,'<AdditionalOptions>%s %%(AdditionalOptions)</AdditionalOptions>',
@@ -909,6 +917,7 @@
 				ant_build(prj, cfg)
 				event_hooks(cfg)
 				vs10_masm(prj, cfg)
+				manifests(cfg)
 			_p(1,'</ItemDefinitionGroup>')
 		end
 	end

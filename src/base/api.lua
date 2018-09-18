@@ -236,6 +236,7 @@
 					UnsignedChar = 1,
 					UseFullPaths = 1,
 					WinMain = 1,
+					DpiAwareness = 1,
 				}
 
 				local englishToAmericanSpelling =
